@@ -8,3 +8,4 @@ export interface Product {
   size: Array<string>;
   date: string;
 }
+

@@ -13,7 +13,7 @@ const webpackConfig = require("./webpack.config.js");
 const paths = {
   scripts: {
     src: "src/ts/index.ts",
-    watch: "src/ts/**/*.ts",
+    watch: "src/ts/**/*",
   },
   styles: {
     src: "src/scss/main.scss",

@@ -1,0 +1,54 @@
+.shelf-item {
+  .info {
+    .producName {
+      font-family: "Open Sans";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.07px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    .productInstalments,
+    .productPrice {
+      font-family: "Open Sans";
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21.79px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .productInstalments{
+      font-weight: 400;
+      color: $cinza1;
+    }
+    .selectSize{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      span{
+        background-color: $black;
+        color: $white;
+        font-weight: 700;
+        width: 45px;
+        height: 25px;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  .addToCart {
+    border: none;
+    width: 100%;
+    height: 33px;
+    background-color: $black;
+    color: $white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19.07px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

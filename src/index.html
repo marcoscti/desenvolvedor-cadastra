@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -10,10 +10,116 @@
 </head>
 
 <body>
+  <header>
+    <nav class="container">
+      <ul class="menu">
+        <li><a href="/"><img src="img/logo-cadastra.png" /></a></li>
+        <li><button id="btn-minicart"><img src="img/minicart_icon.png" alt="Minicart"><span
+              class="minicartQuantity">0</span></button></li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
+    <div class="minicart">
+      <div class="minicart-container">
+        <div class="minicart-header">
+          <h1 class="title">Minicart</h1>
+          <button id="btn-close-minicart"></button>
+        </div>
+        <ul id="minicart-content">
 
+        </ul>
+        <div class="minicart-footer">
+          <div class="subtotal">
+            <span class="title-subtotal">Subtotal</span>
+            <span class="value-subtotal"></span>
+          </div>
+          <div class="total">
+            <span class="title-total">Total</span>
+            <span class="value-total"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="subHeader">
+      <h1 class="title">Blusas</h1>
+      <div class="filtersGlobal">
+        <div class="filterMobile">Filtrar</div>
+        <div class="ordenarMobile">Ordenar</div>
+        <div class="ordenar">
+          <div class="itemDisabled">Ordenar Por:</div>
+          <div class="items">
+            <div class="item" data-order="recente">Mais Recentes</div>
+            <div class="item" data-order="menorpreco">Menor Preço</div>
+            <div class="item" data-order="maiorpreco">Maior Preço</div>
+            <button class="ordenarClose">x</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="content">
+      <section class="filter">
+        <div class="colors">
+          <h2 class="title">Cores <button class="closeMbile">x</button></h2>
+          <form class="cores">
+            <ul class="colors">
+              <li class="color"><input type="checkbox" name="Amarelo" data-filter="Amarelo" />Amarelo</li>
+              <li class="color"><input type="checkbox" name="Azul" data-filter="Azul" />Azul</li>
+              <li class="color"><input type="checkbox" name="Branco" data-filter="Branco" />Branco</li>
+              <li class="color"><input type="checkbox" name="Cinza" data-filter="Cinza" />Cinza</li>
+              <li class="color"><input type="checkbox" name="Laranja" data-filter="Laranja" />Laranja</li>
+              <li class="color"><input type="checkbox" name="Verde" data-filter="Verde" />Verde</li>
+              <li class="color"><input type="checkbox" name="Vermelho" data-filter="Vermelho" />Vermelho</li>
+              <li class="color"><input type="checkbox" name="Preto" data-filter="Preto" />Preto</li>
+              <li class="color"><input type="checkbox" name="Rosa" data-filter="Rosa" />Rosa</li>
+              <li class="color"><input type="checkbox" name="Vinho" data-filter="Vinho" />Vinho</li>
+              <li class="color"><a href="#">Ver todas as cores</a></li>
+            </ul>
+          </form>
+        </div>
+        <div class="size">
+          <h2 class="title">Tamanhos</h2>
+          <form class="tamanhos">
+            <ul class="sizes">
+              <div class="size" data-filter="P">P</div>
+              <div class="size" data-filter="M">M</div>
+              <div class="size" data-filter="G">G</div>
+              <div class="size" data-filter="GG">GG</div>
+              <div class="size" data-filter="U">U</div>
+              <div class="size" data-filter="36">36</div>
+              <div class="size" data-filter="38">38</div>
+              <div class="size" data-filter="40">40</div>
+            </ul>
+          </form>
+        </div>
+        <div class="price">
+          <h2 class="title">Faixa de Preço</h2>
+          <form class="precos">
+            <ul class="listPrecos">
+              <li class="preco"><input type="checkbox" name="zero50" data-filter="0-50" />de R$0 até R$50</li>
+              <li class="preco"><input type="checkbox" name="Azul" data-filter="50-150" />de R$1 até R$150</li>
+              <li class="preco"><input type="checkbox" name="Branco" data-filter="151-300" />de R$151 até R$300</li>
+              <li class="preco"><input type="checkbox" name="Cinza" data-filter="301-500" />de R$301 até R$500</li>
+              <li class="preco"><input type="checkbox" name="Laranja" data-filter="500" />a partir de R$500</li>
+            </ul>
+          </form>
+        </div>
+        <div class="mobileFooter">
+          <button class="closeMobile">Aplicar</button>
+          <button class="clearMobile">Limpar</button>
+        </div>
+      </section>
+      <ul class="listProducts"></ul>
+    </div>
+    <div class="loadMoreContainer">
+      <button class="loadMore">Carregar mais</button>
+    </div>
+  </main>
+  <footer>
+    <p>CADASTRA: Implantação de E-commerce VTEX</p>
+  </footer>
+  <script src="bundle.js"></script>
 </body>
-<h1>Desafio Cadastra</h1>
-
-<script src="bundle.js"></script>
 
 </html>

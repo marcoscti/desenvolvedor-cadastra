@@ -1,0 +1,157 @@
+.overlay {
+  position: fixed;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.562);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.overlay.active {
+  display: block !important;
+}
+
+.minicart.active {
+  transform: translateX(0);
+  /* Move o minicart para a posição visível */
+  display: block !important;
+}
+
+.minicart {
+  width: 430px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 10;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  display: none;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+
+  .minicart-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .minicart-header {
+      display: flex;
+      height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $black;
+      padding: 0 20px;
+
+      .title {
+        color: $white;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.72018 0.209177C8.58614 0.0754438 8.40452 0.000339508 8.21518 0.000339508C8.02583 0.000339508 7.84422 0.0754438 7.71018 0.209177L4.46418 3.45518L1.21918 0.209177C1.15286 0.142859 1.07413 0.0902541 0.987482 0.0543633C0.900834 0.0184725 0.807965 1.84877e-09 0.714178 0C0.620391 -1.84877e-09 0.527522 0.0184725 0.440874 0.0543633C0.354226 0.090254 0.275495 0.142859 0.209177 0.209177C0.142859 0.275495 0.090254 0.354226 0.0543633 0.440874C0.0184725 0.527522 -1.84877e-09 0.620391 0 0.714178C1.84877e-09 0.807965 0.0184725 0.900834 0.0543633 0.987482C0.0902541 1.07413 0.142859 1.15286 0.209177 1.21918L3.45418 4.46518L0.209177 7.71018C0.0830144 7.84569 0.0143375 8.02485 0.0175972 8.20997C0.0208569 8.39509 0.0958007 8.57173 0.226656 8.70272C0.357511 8.8337 0.534074 8.90882 0.719191 8.91226C0.904307 8.91571 1.08354 8.84721 1.21918 8.72118L4.46418 5.47518L7.71018 8.72118C7.84581 8.84721 8.02505 8.91571 8.21017 8.91226C8.39528 8.90882 8.57185 8.8337 8.7027 8.70272C8.83356 8.57173 8.9085 8.39509 8.91176 8.20997C8.91502 8.02485 8.84634 7.84569 8.72018 7.71018L5.47418 4.46518L8.72018 1.21918C8.85391 1.08514 8.92902 0.903523 8.92902 0.714178C8.92902 0.524833 8.85391 0.343218 8.72018 0.209177Z' fill='black'/%3E%3C/svg%3E");
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: invert(100%) sepia(3%) saturate(11%) hue-rotate(26deg) brightness(102%) contrast(106%);
+      }
+    }
+
+    #minicart-content {
+      height: calc(100vh - 150px);
+      overflow-y: scroll;
+      padding: 20px;
+      @media (max-width: 768px) {
+        width: 85%;
+      }
+      .minicart-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        border-bottom: 1px solid $cinza3;
+        gap: 10px;
+        .productPrice,
+        .producName {
+          font-weight: 700;
+          font-size: 16px;
+        }
+
+        .image {
+          img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            object-position: top;
+          }
+        }
+
+        .product-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+
+          .product-quantity {
+            display: flex;
+            max-width: 125px;
+            width: 100%;
+            align-items: center;
+
+            .quantity {
+              width: 40px;
+              text-align: center;
+              outline: none;
+            }
+          }
+        }
+
+        .product-price {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 10px;
+
+          button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='20' viewBox='0 0 18 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 9V15M7 9V15M3 5V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19H13C13.5304 19 14.0391 18.7893 14.4142 18.4142C14.7893 18.0391 15 17.5304 15 17V5M1 5H17M4 5L6 1H12L14 5' stroke='%2376767B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+
+      }
+    }
+
+    .minicart-footer {
+      height: 100px;
+      position: static;
+      background-color: $black;
+      color: $white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+
+      .subtotal,
+      .total {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

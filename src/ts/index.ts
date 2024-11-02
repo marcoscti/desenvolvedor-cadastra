@@ -1,9 +1,7 @@
-import { Product } from "./Product";
+import { Cart } from "./class/cart"
+import { ProductClass } from "./class/product"
+import { Utils } from "./utils"
 
-const serverUrl = "http://localhost:5000";
-
-function main() {
-  console.log(serverUrl);
-}
-
-document.addEventListener("DOMContentLoaded", main);
+new Cart()
+new ProductClass()
+new Utils()

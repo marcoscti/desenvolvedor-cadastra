@@ -1,24 +1,27 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path'); 
 
 module.exports = (paths) => ({
   entry: {
-    main: path.resolve(__dirname, paths.scripts.src),
+    main: path.resolve(__dirname, paths.scripts.src), 
   },
   output: {
-    path: path.resolve(__dirname, paths.dest),
+    path: path.resolve(__dirname, paths.dest), 
     filename: "bundle.js",
   },
-  mode: "development",
+  mode: "development", 
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        include: path.resolve(__dirname, paths.scripts.src),
-        use: "ts-loader",
+        test: /\.(ts|tsx|js|jsx)$/, 
+        exclude: /node_modules/, 
+        use: {
+          loader: "ts-loader",
+        },
       },
     ],
   },
-  plugins: [],
+  plugins: [], 
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'], 
+  },
 });
