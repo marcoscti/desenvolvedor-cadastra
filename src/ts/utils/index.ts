@@ -1,6 +1,7 @@
 export class Utils {
   constructor() {
     this.openFilter()
+    this.showMore()
   }
   public convertPrice(price: number) {
     return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -35,6 +36,12 @@ export class Utils {
     ordenarClose.addEventListener('click', () => {
       let filter = document.querySelector('.ordenar') as HTMLElement
       filter.removeAttribute('style')
+    })
+  }
+  public showMore() {
+    const showMore = document.querySelector('.loadMore') as HTMLElement
+    showMore.addEventListener('click', () => {
+      window.location.href= '/'
     })
   }
 }

@@ -123,7 +123,7 @@ export class ProductClass {
     })
   }
 
-  private filterProducts(filters: { color?: string[], size?: string[], price?: [number, number][] }) {
+  private filterProducts(filters: { color?: string[], size?: string[], price?: number[][] }) {
     const filteredProducts = this.products.filter(product => {
       const colorMatch = !filters.color || filters.color.includes(product.color)
       const sizeMatch = !filters.size || product.size.some(size => filters.size!.includes(size))
@@ -201,7 +201,7 @@ export class ProductClass {
   }
 
   private displayLoading(show: boolean) {
-    const loadingElement = document.querySelector('.loading')
+    const loadingElement = document.querySelector('.loading') as HTMLElement
     if (loadingElement) {
       loadingElement.style.display = show ? 'block' : 'none'
     }

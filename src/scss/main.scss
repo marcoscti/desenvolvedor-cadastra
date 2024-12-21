@@ -52,6 +52,9 @@ body {
         }
       }
     }
+    @media (max-width: 768px) {
+      position: unset;
+    }
   }
 
   main {
