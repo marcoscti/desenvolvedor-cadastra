@@ -26,7 +26,7 @@ export class Cart {
     const productToAdd = { 
       ...product, 
       quantity: 1, 
-      selectedSize: product.size[0] // assuming the first size as default adjust as needed
+      selectedSize: product.size[0]
     }
   
     if (existingProduct) {

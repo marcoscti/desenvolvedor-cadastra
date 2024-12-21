@@ -73,9 +73,8 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 - Typescript com clean code
 - Adição de processo no gulp para otimizar imagens
 #### Instruções para rodar as alterações
-Durante o desenvolvimento percebi que algumas configurações são incompatíveis com o meu SO
-Ainda assim basta acessar e rodar com o comando npm start
-precisei rodar na porta 5001 pois o windows não permite usar a 5000
-meu email é: [marcosc974@gmail.com](mailto:marcosc974@gmail.com)
+Versão node testada: 16.20.2
+Para executar: `npm install` e `npm start`
+Meu email é: [marcosc974@gmail.com](mailto:marcosc974@gmail.com)
 
 ##### Dúvidas: [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Dúvida%20Vaga%20DEV%20-%20Cadastra)

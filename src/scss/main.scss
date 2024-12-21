@@ -18,7 +18,10 @@ body {
     height: 64px;
     display: flex;
     align-items: center;
-
+    position: sticky;
+    z-index: 9;
+    top: 0;
+    background-color: #fff;
     nav {
       ul.menu {
         display: flex;
@@ -354,6 +357,7 @@ body {
         align-items: center;
         justify-content: center;
         margin-left: 200px;
+        cursor: pointer;
 
         @media (max-width: 768px) {
           margin-left: unset;

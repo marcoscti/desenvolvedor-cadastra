@@ -34,10 +34,9 @@ export class ProductClass {
 
   private async getProducts(): Promise<Product[] | undefined> {
     try {
-      const response = await fetch('http://localhost:5001/products')
+      const response = await fetch('http://localhost:5000/products')
       if (!response.ok) throw new Error("Failed to fetch products")
       const products: Product[] = await response.json()
-      console.log('Produtos:', products)
       return products
     } catch (error) {
       console.error("Failed to load products:", error)
@@ -111,24 +110,24 @@ export class ProductClass {
 
     const selectedPriceRanges = Array.from(document.querySelectorAll<HTMLInputElement>('.preco input[type="checkbox"][data-filter]:checked'))
       .map(input => input.getAttribute('data-filter')!)
-
+    
     const priceRanges = selectedPriceRanges.map(range => {
       const [min, max] = range.split('-').map(Number)
       return max ? [min, max] : [min, Infinity]
     })
-
+    
     this.filterProducts({
       color: selectedColors.length ? selectedColors : undefined,
       size: selectedSizes.length ? selectedSizes : undefined,
-      priceRanges: priceRanges.length ? priceRanges : undefined,
+      price: priceRanges.length ? priceRanges : undefined,
     })
   }
 
-  private filterProducts(filters: { color?: string[], size?: string[], priceRanges?: [number, number][] }) {
+  private filterProducts(filters: { color?: string[], size?: string[], price?: [number, number][] }) {
     const filteredProducts = this.products.filter(product => {
       const colorMatch = !filters.color || filters.color.includes(product.color)
       const sizeMatch = !filters.size || product.size.some(size => filters.size!.includes(size))
-      const priceMatch = !filters.priceRanges || filters.priceRanges.some(([min, max]) => product.price >= min && product.price <= max)
+      const priceMatch = !filters.price || filters.price.filter(([min, max]) => product.price >= min && product.price <= max)
       return colorMatch && sizeMatch && priceMatch
     })
     this.createListProduct(filteredProducts)

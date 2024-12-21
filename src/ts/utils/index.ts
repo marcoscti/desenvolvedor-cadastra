@@ -1,6 +1,3 @@
-import { ProductClass } from "../class/product"
-import { Product } from "../types/Product"
-
 export class Utils {
   constructor() {
     this.openFilter()
